@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Burst
+import Bursts
 
 final class ViewController: UIViewController {
     override func viewDidLoad() {
@@ -177,7 +177,7 @@ final class ViewController: UIViewController {
         let icon = iconSwitch.isOn ? UIImage(systemName: "star.fill") : nil
         let buttonIcon = buttonSwitch.isOn ? UIImage(systemName: "arrowshape.turn.up.left") : nil
 
-        let drop = Burst(
+        let burst = Burst(
             title: title,
             subtitle: subtitle,
             icon: icon,
@@ -188,7 +188,7 @@ final class ViewController: UIViewController {
             position: position,
             duration: .seconds(duration)
         )
-        Bursts.show(drop)
+        Bursts.show(burst)
     }
 
     @objc
