@@ -78,7 +78,7 @@ struct ContentView: View {
   
     var body: some View {
         Button("Show Bursts") {
-            Drops.show(burst)
+            Bursts.show(burst)
         }
     }
 }
@@ -92,7 +92,7 @@ import Bursts
 
 class ViewController: UIViewController {
 
-    func showDrop() {
+    func showBursts() {
         Bursts.show("Title")
     }
 }
