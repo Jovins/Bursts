@@ -93,7 +93,7 @@ import Bursts
 class ViewController: UIViewController {
 
     func showBursts() {
-        Bursts.show("Title")
+        Bursts.show(burst)
     }
 }
 ```
