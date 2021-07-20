@@ -41,6 +41,13 @@ let burst = Burst(title: "Title Only")
 let burst = burst(title: "Title", subtitle: "Subtitle")
 // 4.set title、subtitle and animator duration
 let burst = burst(title: "Title", subtitle: "Subtitle", duration: 5.0)
+// 外观设置
+var setting = BurstSetting()
+setting.isDefault = false
+setting.backgroundColor = UIColor(hex: 0x66ccff)
+setting.shadowColor = .orange
+setting.titleColor = .white
+setting.subtitleColor = UIColor(hex: 0xEFEFEF)
 //  init Bursts
 let burst = Burst(
     title: "Title",
@@ -52,7 +59,7 @@ let burst = Burst(
     },
     position: .top,
     duration: 2.0,
-    accessibility: "Alert: Title, Subtitle"
+    setting: setting
 )
 
 // Show Bursts
