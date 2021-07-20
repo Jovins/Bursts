@@ -25,11 +25,8 @@ A Funny Framework is showing alerts, Have been Adapting Swift and SwiftUI
 ```
 use_frameworks!
 platform :ios, '10.0'
-
 pop 'Bursts'
 ```
-
-----
 
 ### Usage
 
@@ -57,55 +54,16 @@ let burst = Burst(
     duration: 2.0,
     accessibility: "Alert: Title, Subtitle"
 )
-```
 
-+ Show Bursts
-
-```swift
-// only title
+// Show Bursts
 Bursts.show("Title")
-// Bursts
 Bursts.show(burst)
 ```
-
-+ SwiftUI
-
-```swift
-import SwiftUI
-import Bursts
-
-struct ContentView: View {
-  
-    var body: some View {
-        Button("Show Bursts") {
-            Bursts.show(burst)
-        }
-    }
-}
-```
-
-+ Swift UIKit
-
-```swift
-import UIKit
-import Bursts
-
-class ViewController: UIViewController {
-
-    func showBursts() {
-        Bursts.show(burst)
-    }
-}
-```
-
-----
 
 ### Example Projects
 
 - Run the `SwiftUIExample` target to see how Bursts works in SwiftUI applications.
 - Run the `UIKitExample` target to see how Bursts works in UIKit applications.
-
-----
 
 ### Author
 

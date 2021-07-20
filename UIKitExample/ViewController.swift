@@ -96,7 +96,7 @@ final class ViewController: UIViewController {
         slider.minimumValue = 0.1
         slider.maximumValue = 10.0
         slider.value = 2.0
-        slider.tintColor = UIColor.orange
+        slider.tintColor = UIColor(hex: 0x66ccff)
         slider.addTarget(self, action: #selector(didChangeDuration), for: .valueChanged)
         return slider
     }()
@@ -112,6 +112,7 @@ final class ViewController: UIViewController {
     private lazy var iconSwitch: UISwitch = {
         let control = UISwitch()
         control.translatesAutoresizingMaskIntoConstraints = false
+        control.onTintColor = UIColor(hex: 0x66ccff)
         return control
     }()
 
@@ -126,6 +127,7 @@ final class ViewController: UIViewController {
     private lazy var buttonSwitch: UISwitch = {
         let control = UISwitch()
         control.translatesAutoresizingMaskIntoConstraints = false
+        control.onTintColor = UIColor(hex: 0x66ccff)
         return control
     }()
 
@@ -157,7 +159,7 @@ final class ViewController: UIViewController {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Show Bursts", for: .normal)
-        button.backgroundColor = .orange
+        button.backgroundColor = UIColor(hex: 0x66ccff)
         button.tintColor = .white
         button.contentEdgeInsets = .init(top: 10, left: 20, bottom: 10, right: 20)
         button.layer.cornerRadius = 7.5
