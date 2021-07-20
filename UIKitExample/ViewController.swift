@@ -176,9 +176,17 @@ final class ViewController: UIViewController {
         let position: Burst.Position = positionSegmentedControl.selectedSegmentIndex == 0 ? .top : .bottom
         let duration = TimeInterval(durationSlider.value)
 
-        let icon = iconSwitch.isOn ? UIImage(systemName: "star.fill") : nil
+        let icon = iconSwitch.isOn ? UIImage(systemName: "star") : nil
         let buttonIcon = buttonSwitch.isOn ? UIImage(systemName: "arrowshape.turn.up.left") : nil
 
+        // 外观设置
+        var setting = BurstSetting()
+        setting.isDefault = false
+        setting.backgroundColor = UIColor(hex: 0x66ccff)
+        setting.shadowColor = .orange
+        setting.titleColor = .white
+        setting.subtitleColor = UIColor(hex: 0xEFEFEF)
+        
         let burst = Burst(
             title: title,
             subtitle: subtitle,
@@ -188,7 +196,8 @@ final class ViewController: UIViewController {
                 Bursts.hide()
             }),
             position: position,
-            duration: .seconds(duration)
+            duration: .seconds(duration),
+            setting: setting
         )
         Bursts.show(burst)
     }

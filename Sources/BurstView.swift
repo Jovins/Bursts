@@ -15,10 +15,15 @@ internal final class BurstView: UIView {
         
         self.burst = burst
         super.init(frame: .zero)
-        if #available(iOS 13.0, *) {
-            backgroundColor = .secondarySystemBackground
+        
+        if self.burst.setting.isDefault {
+            if #available(iOS 13.0, *) {
+                backgroundColor = .secondarySystemBackground
+            } else {
+                backgroundColor = .white
+            }
         } else {
-            backgroundColor = .white
+            backgroundColor = self.burst.setting.backgroundColor
         }
 
         addSubview(stackView)
@@ -106,7 +111,7 @@ internal final class BurstView: UIView {
             addGestureRecognizer(tap)
         }
 
-        layer.shadowColor = UIColor.black.cgColor
+        layer.shadowColor = burst.setting.shadowColor.cgColor
         layer.shadowOffset = .zero
         layer.shadowRadius = 25
         layer.shadowOpacity = 0.15
@@ -126,11 +131,16 @@ internal final class BurstView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 1
         label.textAlignment = .center
-        if #available(iOS 13.0, *) {
-            label.textColor = .label
+        if self.burst.setting.isDefault {
+            if #available(iOS 13.0, *) {
+                label.textColor = .label
+            } else {
+                label.textColor = .black
+            }
         } else {
-            label.textColor = .black
+            label.textColor = self.burst.setting.titleColor
         }
+        
         label.font = UIFont.preferredFont(forTextStyle: .subheadline).bold
         label.adjustsFontForContentSizeCategory = true
         return label
@@ -141,11 +151,17 @@ internal final class BurstView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 1
         label.textAlignment = .center
-        if #available(iOS 13.0, *) {
-            label.textColor = UIAccessibility.isDarkerSystemColorsEnabled ? .label : .secondaryLabel
+        
+        if self.burst.setting.isDefault {
+            if #available(iOS 13.0, *) {
+                label.textColor = UIAccessibility.isDarkerSystemColorsEnabled ? .label : .secondaryLabel
+            } else {
+                label.textColor = UIAccessibility.isDarkerSystemColorsEnabled ? .black : .darkGray
+            }
         } else {
-            label.textColor = UIAccessibility.isDarkerSystemColorsEnabled ? .black : .darkGray
+            label.textColor = self.burst.setting.subtitleColor
         }
+        
         label.font = UIFont.preferredFont(forTextStyle: .subheadline)
         label.adjustsFontForContentSizeCategory = true
         return label
@@ -156,11 +172,7 @@ internal final class BurstView: UIView {
         view.translatesAutoresizingMaskIntoConstraints = false
         view.contentMode = .scaleAspectFit
         view.clipsToBounds = true
-        if #available(iOS 13.0, *) {
-            view.tintColor = UIAccessibility.isDarkerSystemColorsEnabled ? .label : .secondaryLabel
-        } else {
-            view.tintColor = UIAccessibility.isDarkerSystemColorsEnabled ? .black : .darkGray
-        }
+        view.tintColor = .blue
         return view
     }()
 
@@ -169,12 +181,6 @@ internal final class BurstView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(didTapButton), for: .touchUpInside)
         button.clipsToBounds = true
-        if #available(iOS 13.0, *) {
-            button.backgroundColor = .link
-        } else {
-            button.backgroundColor = .blue
-        }
-        button.tintColor = .white
         button.imageView?.contentMode = .scaleAspectFit
         button.contentEdgeInsets = .init(top: 7.5, left: 7.5, bottom: 7.5, right: 7.5)
         return button

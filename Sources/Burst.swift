@@ -15,6 +15,7 @@ public struct Burst: ExpressibleByStringLiteral {
     public var action: Action?
     public var position: Position
     public var duration: Duration
+    public var setting: BurstSetting
     public var accessibility: Accessibility
     
     public init(
@@ -24,6 +25,7 @@ public struct Burst: ExpressibleByStringLiteral {
         action: Action? = nil,
         position: Position = .top,
         duration: Duration = .recommend,
+        setting: BurstSetting? = nil,
         accessibility: Accessibility? = nil
     ) {
         self.title = title.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -34,6 +36,7 @@ public struct Burst: ExpressibleByStringLiteral {
         self.action = action
         self.position = position
         self.duration = duration
+        self.setting = setting ?? BurstSetting()
         self.accessibility = accessibility
             ?? .init(message: [title, subtitle].compactMap({ $0 }).joined(separator: ", "))
     }
@@ -42,6 +45,7 @@ public struct Burst: ExpressibleByStringLiteral {
         self.title = title
         self.position = .top
         self.duration = .recommend
+        self.setting = BurstSetting()
         self.accessibility = .init(message: title)
     }
 }
