@@ -157,9 +157,12 @@ struct ContentView: View {
         var setting = BurstSetting()
         setting.isDefault = false
         setting.backgroundColor = UIColor(red: CGFloat(colorRed), green: CGFloat(colorGreen), blue: CGFloat(colorBlue), alpha: 1.0)
-        setting.shadowColor = .black
+        //setting.shadowColor = .black
         setting.titleColor = .white
         setting.subtitleColor = UIColor(hex: 0xEFEFEF)
+        setting.shadowColor = UIColor(red: CGFloat(colorRed), green: CGFloat(colorGreen), blue: CGFloat(colorBlue), alpha: 1.0)
+        setting.shadowOpacity = 0.8
+        setting.shadowRadius = 8
         
         let burst = Burst(
             title: title,
