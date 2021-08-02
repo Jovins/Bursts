@@ -150,7 +150,7 @@ struct ContentView: View {
         let title = self.title.trimmingCharacters(in: .whitespacesAndNewlines)
         let subtitle = self.subtitle.trimmingCharacters(in: .whitespacesAndNewlines)
         let iposition: Burst.Position = self.position == 0 ? .top : .bottom
-        let icon = self.hasIcon ? UIImage(systemName: "star.fill") : nil
+        let icon = self.hasIcon ? UIImage(named: "mute") : nil
         let btnIcon = self.hasActionIcon ? UIImage(systemName: "arrowshape.turn.up.left") : nil
         
         // setting
