@@ -29,8 +29,6 @@ public struct BurstSetting {
     public var titleColor: UIColor = .black
     /// 小字体颜色, eg: darkGray
     public var subtitleColor: UIColor = .darkGray
-    /// 高度，eg: 50
-    public var height: CGFloat = 50
     /// 设置圆角，如果该值没有设置，则取min(width, height) * 0.5
     public var cornerRadius: CGFloat = 0
     
