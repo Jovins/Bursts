@@ -47,8 +47,8 @@ struct ContentView: View {
                     }
                     HStack(spacing: 60) {
                         Toggle("Icon", isOn: $hasIcon)
+                            .frame(width: 100, alignment: .leading)
                         Spacer()
-                        Toggle("Button", isOn: $hasActionIcon)
                     }
                 }
                 VStack {
@@ -125,13 +125,13 @@ struct ContentView: View {
                     
                     showBursts()
                 }, label: {
-                    Text("Show Drop")
+                    Text("Show Bursts")
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .padding(10)
                 })
                 .frame(maxWidth: .infinity)
-                .background(Color(hex: 0x66ccff))
+                .background(Color(red: colorRed, green: colorGreen, blue: colorBlue, opacity: 1.0))
                 .cornerRadius(7.5)
                 .padding(.bottom, 44)
             }
