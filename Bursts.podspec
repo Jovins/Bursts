@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name = 'Bursts'
-    s.version = '1.0.1'
+    s.version = '1.0.2'
     s.summary = 'A Funny Framework for showing iOS 13 like system alerts'
     s.description = <<-DESC
     A Funny Framework is showing alerts, Have been Adapting Swift and SwiftUI.
