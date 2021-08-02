@@ -37,11 +37,24 @@ internal final class BurstView: UIView {
     }
 
     override var frame: CGRect {
-        didSet { layer.cornerRadius = frame.cornerRadius }
+        didSet {
+            if self.burst.setting.cornerRadius == 0 {
+                layer.cornerRadius = frame.cornerRadius
+            } else {
+                layer.cornerRadius = self.burst.setting.cornerRadius
+            }
+            
+        }
     }
 
     override var bounds: CGRect {
-        didSet { layer.cornerRadius = frame.cornerRadius }
+        didSet {
+            if self.burst.setting.cornerRadius == 0 {
+                layer.cornerRadius = frame.cornerRadius
+            } else {
+                layer.cornerRadius = self.burst.setting.cornerRadius
+            }
+        }
     }
 
     // MARK: - Method
@@ -112,12 +125,12 @@ internal final class BurstView: UIView {
         }
 
         layer.shadowColor = burst.setting.shadowColor.cgColor
-        layer.shadowOffset = .zero
-        layer.shadowRadius = 25
-        layer.shadowOpacity = 0.15
-        layer.shouldRasterize = true
-        layer.rasterizationScale = UIScreen.main.scale
-        layer.masksToBounds = false
+        layer.shadowRadius = burst.setting.shadowRadius
+        layer.shadowOffset = burst.setting.shadowOffset
+        layer.shadowOpacity = burst.setting.shadowOpacity
+        layer.shouldRasterize = burst.setting.shouldRasterize
+        layer.rasterizationScale = burst.setting.rasterizationScale
+        layer.masksToBounds = burst.setting.masksToBounds
     }
 
     @objc
