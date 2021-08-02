@@ -28,6 +28,18 @@ platform :ios, '10.0'
 pop 'Bursts'
 ```
 
+### Configurations
+
+A `Bursts` can be configured with a configuration that specifies:
+
++ backgroundColor
++ shadow attribute
++ shouldRasterize
++ rasterizationScale
++ titleColor
++ subtitleColor
++ cornerRadius
+
 ### Usage
 
 + Create a Bursts Example

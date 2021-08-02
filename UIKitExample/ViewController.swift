@@ -183,7 +183,7 @@ final class ViewController: UIViewController {
         var setting = BurstSetting()
         setting.isDefault = false
         setting.backgroundColor = UIColor(hex: 0x66ccff)
-        setting.shadowColor = .orange
+        setting.shadowColor = .black
         setting.titleColor = .white
         setting.subtitleColor = UIColor(hex: 0xEFEFEF)
         
