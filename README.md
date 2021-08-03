@@ -1,7 +1,7 @@
 # Bursts 🔥
 A Funny Framework is showing alerts, Have been Adapting Swift and SwiftUI.  If you like the project, please `star ★`.
 
-![gif](https://github.com/Jovins/Bursts/blob/main/Assets/Bursts-Gifs.gif)
+<img src="https://github.com/Jovins/Bursts/blob/main/Assets/bursts.gif" width = "320" height = "680" div align=center />
 
 ----
 
