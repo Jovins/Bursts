@@ -6,6 +6,9 @@ A Funny Framework is showing alerts, Have adapted Swift and SwiftUI  If you like
 
 <img src="./Assets/bursts.gif" width = "320" height = "680" div align=center />
 
+</p>
+</details>
+
 ----
 
 [![CI](https://img.shields.io/badge/Bursts-pasing-success.svg)](https://github.com/jovins/Bursts/actions) [![CI](https://img.shields.io/badge/SwiftUI-Adapting-blueviolet.svg)]() [![CI](https://img.shields.io/badge/Swift-5.1-important.svg)]()[![CI](https://img.shields.io/badge/License-MIT-red.svg)]()
